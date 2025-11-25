@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Check, QrCode, ShoppingCart } from "lucide-react";
+import { ProductDigitalExperience } from "@/components/ProductDigitalExperience";
+import { Check, ShoppingCart } from "lucide-react";
 import focusProduct from "@/assets/focus-product.jpg";
 
 const ProductFocus = () => {
@@ -147,28 +148,38 @@ const ProductFocus = () => {
             </div>
           </div>
 
-          {/* QR Experience */}
-          <div className="bg-gradient-to-br from-focus-light to-focus-light/50 rounded-3xl p-8 md:p-12">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-focus rounded-2xl mb-4">
-                <QrCode className="h-8 w-8 text-white" />
-              </div>
-              <h2 className="font-display text-3xl font-light">
-                O teu ritual Focus
-              </h2>
-              <p className="text-muted-foreground">
-                Cada garrafa inclui um QR code exclusivo para aceder à tua playlist 
-                de concentração personalizada. Música cientificamente selecionada para 
-                potenciar o teu foco.
-              </p>
-              <Button
-                variant="outline"
-                className="border-focus/30 hover:bg-focus/10 rounded-full"
-              >
-                Descobre a experiência
-              </Button>
-            </div>
-          </div>
+        </div>
+      </section>
+
+      {/* Digital Experience Section */}
+      <ProductDigitalExperience 
+        productName="Focus"
+        productColor="focus"
+        playlist={{
+          name: "Deep Work Sessions",
+          description: "Música instrumental e ambient para máxima concentração",
+          duration: "2h 30min",
+          tracks: 42,
+          color: "focus"
+        }}
+        meditations={[
+          {
+            title: "Visualização de Foco",
+            duration: "10 min",
+            type: "Iniciante",
+            description: "Preparação mental para trabalho profundo"
+          },
+          {
+            title: "Respiração Consciente",
+            duration: "5 min",
+            type: "Iniciante",
+            description: "Técnica de respiração para clareza mental"
+          }
+        ]}
+      />
+
+      <section className="section-padding pb-24">
+        <div className="container-custom">
         </div>
       </section>
 
