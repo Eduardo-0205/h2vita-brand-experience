@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Droplet, ShoppingCart } from "lucide-react";
+import { Droplet, ShoppingCart, User } from "lucide-react";
 import { useCart } from "@/hooks/use-cart";
+import { useAuth } from "@/hooks/use-auth";
 
 const Navigation = () => {
   const { itemCount } = useCart();
+  const { user } = useAuth();
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border/50">
@@ -31,6 +33,11 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            {user && (
+              <Link to="/dashboard" className="relative">
+                <User className="h-5 w-5 text-foreground/70 hover:text-foreground transition-colors" />
+              </Link>
+            )}
             <Link to="/carrinho" className="relative">
               <ShoppingCart className="h-5 w-5 text-foreground/70 hover:text-foreground transition-colors" />
               {itemCount > 0 && (
@@ -43,7 +50,9 @@ const Navigation = () => {
               asChild
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
             >
-              <Link to="/loja">Experimenta o teu ritual</Link>
+              <Link to={user ? "/dashboard" : "/auth"}>
+                {user ? "A Minha Subscrição" : "Experimenta o teu ritual"}
+              </Link>
             </Button>
           </div>
         </div>

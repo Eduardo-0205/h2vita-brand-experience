@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/hooks/use-cart";
+import { AuthProvider } from "@/hooks/use-auth";
 import Index from "./pages/Index";
 import ProductFocus from "./pages/ProductFocus";
 import ProductRelax from "./pages/ProductRelax";
@@ -23,17 +24,21 @@ import Sustainability from "./pages/Sustainability";
 import DigitalExperiences from "./pages/DigitalExperiences";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import CreateSubscription from "./pages/CreateSubscription";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <CartProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
+    <AuthProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/produtos/focus" element={<ProductFocus />} />
             <Route path="/produtos/relax" element={<ProductRelax />} />
@@ -52,12 +57,16 @@ const App = () => (
             <Route path="/experiencias-digitais" element={<DigitalExperiences />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/criar-subscricao" element={<CreateSubscription />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </CartProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
