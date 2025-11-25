@@ -14,6 +14,11 @@ import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
+import Blog from "./pages/Blog";
+import StressManagement from "./pages/blog/StressManagement";
+import Concentration from "./pages/blog/Concentration";
+import Burnout from "./pages/blog/Burnout";
+import FunctionalIngredients from "./pages/blog/FunctionalIngredients";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +39,11 @@ const App = () => (
             <Route path="/loja" element={<Shop />} />
             <Route path="/carrinho" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/gestao-stress" element={<StressManagement />} />
+            <Route path="/blog/concentracao" element={<Concentration />} />
+            <Route path="/blog/burnout" element={<Burnout />} />
+            <Route path="/blog/ingredientes-funcionais" element={<FunctionalIngredients />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
