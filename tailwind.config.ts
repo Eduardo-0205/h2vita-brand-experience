@@ -47,16 +47,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        focus: {
+          DEFAULT: "hsl(var(--focus))",
+          light: "hsl(var(--focus-light))",
+          foreground: "hsl(var(--focus-foreground))",
         },
+        relax: {
+          DEFAULT: "hsl(var(--relax))",
+          light: "hsl(var(--relax-light))",
+          foreground: "hsl(var(--relax-foreground))",
+        },
+        immunity: {
+          DEFAULT: "hsl(var(--immunity))",
+          light: "hsl(var(--immunity-light))",
+          foreground: "hsl(var(--immunity-foreground))",
+        },
+        glow: {
+          DEFAULT: "hsl(var(--glow))",
+          light: "hsl(var(--glow-light))",
+          foreground: "hsl(var(--glow-foreground))",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Urbanist", "Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
