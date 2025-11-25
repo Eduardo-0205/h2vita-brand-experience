@@ -186,7 +186,11 @@ const Shop = () => {
                     Cria a tua subscrição personalizada e recebe os teus rituais mensalmente com 15% de desconto
                   </p>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                    <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8">
+                    <Button 
+                      size="lg" 
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+                      onClick={() => window.location.href = "/criar-subscricao"}
+                    >
                       Criar Subscrição
                     </Button>
                   </motion.div>

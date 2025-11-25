@@ -14,7 +14,186 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      order_items: {
+        Row: {
+          created_at: string | null
+          id: string
+          order_id: string
+          price: number
+          product_id: string
+          product_name: string
+          quantity: number
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          order_id: string
+          price: number
+          product_id: string
+          product_name: string
+          quantity?: number
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          order_id?: string
+          price?: number
+          product_id?: string
+          product_name?: string
+          quantity?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          created_at: string | null
+          delivered_at: string | null
+          delivery_address: string | null
+          id: string
+          status: string
+          subscription_id: string | null
+          total: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          delivered_at?: string | null
+          delivery_address?: string | null
+          id?: string
+          status: string
+          subscription_id?: string | null
+          total: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          delivered_at?: string | null
+          delivery_address?: string | null
+          id?: string
+          status?: string
+          subscription_id?: string | null
+          total?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      subscription_products: {
+        Row: {
+          created_at: string | null
+          id: string
+          price: number
+          product_id: string
+          product_name: string
+          quantity: number
+          subscription_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          price: number
+          product_id: string
+          product_name: string
+          quantity?: number
+          subscription_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          price?: number
+          product_id?: string
+          product_name?: string
+          quantity?: number
+          subscription_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subscription_products_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      subscriptions: {
+        Row: {
+          cancelled_at: string | null
+          created_at: string | null
+          delivery_frequency: string
+          id: string
+          next_delivery_date: string | null
+          paused_at: string | null
+          status: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          cancelled_at?: string | null
+          created_at?: string | null
+          delivery_frequency: string
+          id?: string
+          next_delivery_date?: string | null
+          paused_at?: string | null
+          status: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          cancelled_at?: string | null
+          created_at?: string | null
+          delivery_frequency?: string
+          id?: string
+          next_delivery_date?: string | null
+          paused_at?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
