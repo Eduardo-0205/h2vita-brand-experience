@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ProductDigitalExperience } from "@/components/ProductDigitalExperience";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, QrCode, Music, Sparkles } from "lucide-react";
@@ -122,55 +123,36 @@ const ProductRelax = () => {
           </div>
         </section>
 
-        {/* Ritual Section */}
-        <section className="section-padding section-spacing">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="font-display text-4xl font-light mb-6">
-                O ritual ideal para ti
-              </h2>
-              <p className="text-lg text-foreground/70">
-                Fim de tarde, pós-treino ou antes de dormir
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <Card className="p-8 text-center border-relax/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-relax-light flex items-center justify-center">
-                  <QrCode className="h-8 w-8 text-relax" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-relax-foreground">
-                  QR Code Interativo
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Acede a conteúdos exclusivos de relaxamento
-                </p>
-              </Card>
-              <Card className="p-8 text-center border-relax/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-relax-light flex items-center justify-center">
-                  <Music className="h-8 w-8 text-relax" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-relax-foreground">
-                  Playlist Relax
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Sons binaurais e música ambiente
-                </p>
-              </Card>
-              <Card className="p-8 text-center border-relax/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-relax-light flex items-center justify-center">
-                  <Sparkles className="h-8 w-8 text-relax" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-relax-foreground">
-                  Meditação Guiada
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Sessões de 3 e 10 minutos
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
+      </main>
 
+      {/* Digital Experience Section */}
+      <ProductDigitalExperience 
+        productName="Relax"
+        productColor="relax"
+        playlist={{
+          name: "Evening Rituals",
+          description: "Sons calmantes e frequências para relaxamento profundo",
+          duration: "1h 45min",
+          tracks: 28,
+          color: "relax"
+        }}
+        meditations={[
+          {
+            title: "Body Scan Relaxante",
+            duration: "15 min",
+            type: "Intermédio",
+            description: "Varredura corporal para libertar tensão"
+          },
+          {
+            title: "Meditação do Sono",
+            duration: "20 min",
+            type: "Todos os níveis",
+            description: "Indução ao sono profundo e reparador"
+          }
+        ]}
+      />
+
+      <main className="flex-1">
         {/* CTA Section */}
         <section className="bg-relax-light section-padding py-20">
           <div className="container-custom text-center">

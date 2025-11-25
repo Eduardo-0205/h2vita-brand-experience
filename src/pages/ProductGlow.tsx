@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ProductDigitalExperience } from "@/components/ProductDigitalExperience";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, QrCode, Music, Sparkles } from "lucide-react";
@@ -122,55 +123,22 @@ const ProductGlow = () => {
           </div>
         </section>
 
-        {/* Ritual Section */}
-        <section className="section-padding section-spacing">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="font-display text-4xl font-light mb-6">
-                O ritual ideal para ti
-              </h2>
-              <p className="text-lg text-foreground/70">
-                Manhã ou tarde, integra no teu ritual de beleza
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <Card className="p-8 text-center border-glow/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-light flex items-center justify-center">
-                  <QrCode className="h-8 w-8 text-glow" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-glow-foreground">
-                  QR Code Interativo
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Acede a conteúdos de beleza e autocuidado
-                </p>
-              </Card>
-              <Card className="p-8 text-center border-glow/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-light flex items-center justify-center">
-                  <Music className="h-8 w-8 text-glow" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-glow-foreground">
-                  Playlist Glow
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Música para momentos de autocuidado
-                </p>
-              </Card>
-              <Card className="p-8 text-center border-glow/20 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-light flex items-center justify-center">
-                  <Sparkles className="h-8 w-8 text-glow" />
-                </div>
-                <h3 className="font-display text-xl font-medium mb-3 text-glow-foreground">
-                  Ritual de Beleza
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Guia completo de skincare e bem-estar
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
+      </main>
 
+      {/* Digital Experience Section */}
+      <ProductDigitalExperience 
+        productName="Glow"
+        productColor="glow"
+        playlist={{
+          name: "Self-Care Moments",
+          description: "Melodias suaves para rituais de autocuidado",
+          duration: "1h 15min",
+          tracks: 30,
+          color: "glow"
+        }}
+      />
+
+      <main className="flex-1">
         {/* CTA Section */}
         <section className="bg-glow-light section-padding py-20">
           <div className="container-custom text-center">
