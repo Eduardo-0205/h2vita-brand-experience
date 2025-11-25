@@ -20,6 +20,7 @@ import Concentration from "./pages/blog/Concentration";
 import Burnout from "./pages/blog/Burnout";
 import FunctionalIngredients from "./pages/blog/FunctionalIngredients";
 import Sustainability from "./pages/Sustainability";
+import DigitalExperiences from "./pages/DigitalExperiences";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/blog/burnout" element={<Burnout />} />
             <Route path="/blog/ingredientes-funcionais" element={<FunctionalIngredients />} />
             <Route path="/sustentabilidade" element={<Sustainability />} />
+            <Route path="/experiencias-digitais" element={<DigitalExperiences />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
