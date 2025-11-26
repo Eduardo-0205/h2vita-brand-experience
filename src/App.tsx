@@ -27,6 +27,7 @@ import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import CreateSubscription from "./pages/CreateSubscription";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/criar-subscricao" element={<CreateSubscription />} />
+            <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
